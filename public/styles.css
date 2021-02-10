@@ -47,7 +47,7 @@ header {
 /* Quando links a tiver com a classe active (estar na pagina) */
 .links a.active {
     font-weight: bold;
-    color: var(--color-darkorange);
+    color: var(--color-darkestorange);
 }
 
 .links a:hover {

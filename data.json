@@ -1,7 +1,7 @@
 {
   "teachers": [
     {
-      "id": 1,
+      "id": "1",
       "avatar_url": "https://images.immediate.co.uk/production/volatile/sites/3/2020/09/Mando-Baby-Yoda-1fe1e36.jpg?webp=true&quality=90&resize=408%2C271",
       "birth": 731116800000,
       "name": "Mando",
@@ -18,5 +18,6 @@
       "type": "P",
       "subjects": "teste1, teste2"
     }
-  ]
+  ],
+  "students": []
 }
