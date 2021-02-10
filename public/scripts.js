@@ -1,0 +1,11 @@
+const modalOverlay = document.querySelector('.ModalOverlay')
+const modal = document.querySelector(".modal")
+
+const cards = document.querySelectorAll('.card')
+
+for (let card of cards){
+    card.addEventListener("click", function(){
+        const cardId = card.getAttribute("id");
+        window.location.href = `/courses/${cardId}`
+    })
+}

@@ -1,0 +1,22 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.immediate.co.uk/production/volatile/sites/3/2020/09/Mando-Baby-Yoda-1fe1e36.jpg?webp=true&quality=90&resize=408%2C271",
+      "birth": 731116800000,
+      "name": "Mando",
+      "degree": "DR",
+      "type": "P",
+      "subjects": "teste1, teste2, teste3"
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2019/06/Luke-Skywalker-Mark-Hamill-em-Star-Wars-1280x720.jpg",
+      "birth": 765417600000,
+      "name": "Luke Skywalker",
+      "degree": "M",
+      "type": "P",
+      "subjects": "teste1, teste2"
+    }
+  ]
+}
