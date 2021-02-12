@@ -19,5 +19,15 @@
       "subjects": "teste1, teste2"
     }
   ],
-  "students": []
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "https://www.arrobanerd.com.br/wp-content/uploads/2020/09/the-mandalorian-temporada-2-trailer-660x372.jpg",
+      "name": "Aluno Teste 1",
+      "email": "alunoteste1@teste.com.br",
+      "birth": 946684800000,
+      "degree": "5ano",
+      "workload": "55"
+    }
+  ]
 }

@@ -45,7 +45,46 @@ module.exports = {
         //dd (de 1 a 31)
         const day = `0${date.getUTCDate()}`.slice(-2)
 
-        return `${year}-${month}-${day}`
-    }
+        return {
+            day,
+            month,
+            year,
+            iso: `${year}-${month}-${day}`,
+            birthday: `${day}/${month}`
+        }
+    },
+    grade: function(degree) {
+
+        if (degree == '5ano') {
+            return 'Quinto Ano'
+        }
+
+        if (degree == '6ano') {
+            return 'Sexto Ano'
+        }
+
+        if (degree == '7ano') {
+            return 'Setimo Ano'
+        }
+
+        if (degree == '8ano') {
+            return 'Oitavo Ano'
+        }
+
+        if (degree == '9ano') {
+            return 'Nono Ano'
+        }
+
+        if (degree == '1col') {
+            return 'Primeiro Colegial'
+        }
+
+        if (degree == '2col') {
+            return 'Segundo Colegial'
+        }
+
+        return 'Terceiro Colegial'
+
+    },
 
 }

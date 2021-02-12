@@ -6,8 +6,18 @@
 
         <section class="details">
             <div class="item">
-            <div>Nome</div>
-            <div>{{ student.name }}</div>
+                <div>Nome</div>
+                <div>{{ student.name }}</div>
+            </div>
+
+            <div class="item">
+                <div>Email</div>
+                <div>{{ student.email }}</div>
+            </div>
+
+            <div class="item">
+                <div>Aniversario</div>
+                <div>{{ student.birthday }}</div>
             </div>
 
             <div class="item">
@@ -16,37 +26,18 @@
             </div>
 
             <div class="item">
-                <div>Grau de Escolaridade</div>
-                <div>{{ student.degree }}</div>
-            </div>
-
-            <div class="item">
-                <div>Tipo de Aula</div>
-                <div>{{ "Presencial" if student.type == "P" else "À Distância" }}</div>
-            </div>
-
-            <div class="item">
-                <div>Acompanhamento</div>
+                <div>Ano escolar</div>
                 <div>
-                    {% for service in student.subjects %}
-                        <span>{{ service }}</span>
-                    {% endfor%}
+                    {{student.degree}}
                 </div>
             </div>
 
             <div class="item">
-                <div>Desde</div>
-                <div>{{ student.created_at}}</div>
+                <div>Carga Horaria Semanal</div>
+                <div>{{ student.workload }}</div>
             </div>
 
-            <div class="botButtons">
-                <a href="/students/{{student.id}}/edit" class="button" >Editar</a>
-                
-                <form id="form-delete" action="/students?_method=DELETE" method="post">
-                    <input type="hidden" name="id" value={{student.id}}>
-                    <button type="submit">Deletar</button>
-                </form>
-            </div>
+            <a href="/students/{{student.id}}/edit" class="button" >Editar</a>
         </section>
     </div>
 {% endblock content %}

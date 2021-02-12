@@ -1,23 +1,21 @@
 const fs = require('fs')
 const data = require ('../data.json')
-const { age, graduation, date } = require('../utils')
+const { age, grade, date } = require('../utils')
 
 //Index
 exports.index = function(req, res){
 
     const students = []
-    
-    for (i in data.students){ 
+
+    for (i in data.students) {
         const student = {
             ...data.students[i],
-            subjects: data.students[i].subjects.split(",")
+            degree: grade(data.students[i].degree)
         }
-        
         students.push(student)
-    } 
+    }
     
     return res.render("students/index", { students })
-
 }
 
 
@@ -38,20 +36,25 @@ exports.post = function (req,res) {
         }
     }
 
-    let { avatar_url, birth, name, degree, type, subjects} = req.body
+    let { avatar_url, name, email, birth, degree, workload} = req.body
 
     birth = Date.parse(req.body.birth)
-    created_at = Date.now()
-    id = Number (data.students.length + 1)
+    
+    let id = 1
+    const lastStudent = data.students[data.students.length-1]
+    
+    if (lastStudent) {
+        id = lastStudent.id +1
+    }
 
     data.students.push({
         id,
-        avatar_url,
-        birth,
-        name,
-        degree,
-        type,
-        subjects,
+        avatar_url, 
+        name, 
+        email, 
+        birth, 
+        degree, 
+        workload
     })
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
@@ -77,9 +80,9 @@ exports.show = function(req,res) {
     const student = {
         ...foundStudent,
         age: age(foundStudent.birth),
-        degree: graduation(foundStudent.degree),
-        subjects: foundStudent.subjects.split(","),
-        created_at: new Intl.DateTimeFormat("pt-BR").format(foundStudent.created_at)
+        degree: grade(foundStudent.degree),
+        created_at: new Intl.DateTimeFormat("pt-BR").format(foundStudent.created_at),
+        birthday: date(foundStudent.birth).birthday
     }
 
     return res.render("students/show", {student})

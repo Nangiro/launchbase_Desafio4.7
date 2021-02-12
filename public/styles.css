@@ -194,13 +194,8 @@ a.button {
 
 #form-delete button[type="submit"] {
     background-color: lightcoral;
+    margin-top: 5px;
 
-}
-
-.botButtons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
 }
 
 /* ======== INDEX.INSTRUCTORS ======== */

@@ -23,6 +23,18 @@
 </div>
 
 <div class="item">
+    <div>Email</div>
+    <div>
+        <input 
+            type="email" 
+            name="email"
+            placeholder="Email do aluno"
+            value="{{student.email}}"    
+        >
+    </div>
+</div>
+
+<div class="item">
     <div>Data de Nascimento</div>
     <div>
         <input 
@@ -34,75 +46,77 @@
 </div>
 
 <div class="item">
-    <div>Grau de Escolaridade</div>
+    <div>Ano escolar</div>
     <div>
         <select name="degree">
             <option 
-                value="EMC" 
-                {% if student.degree == 'EMC'%} 
+                value="5ano" 
+                {% if student.degree == '5ano'%} 
                     selected
                 {%endif%}
-                >Ensino Medio Completo
+                >5 ano
             </option>
             <option 
-                value="ESC"
-                {% if student.degree == 'ESC'%} 
+                value="6ano"
+                {% if student.degree == '6ano'%} 
                     selected
                 {%endif%}
-                >Ensino Superior Completo
+                >6 ano
             </option>
             <option 
-                value="M"
-                {% if student.degree == 'M'%} 
+                value="7ano"
+                {% if student.degree == '7ano'%} 
                     selected
                 {%endif%}
-                >Mestrado
+                >7 ano
             </option>
             <option 
-                value="DR"
-                {% if student.degree == 'DR'%} 
+                value="8ano"
+                {% if student.degree == '8ano'%} 
                     selected
                 {%endif%}
-                >Doutorado
+                >8 ano
+            </option>
+            <option 
+                value="9ano"
+                {% if student.degree == '9ano'%} 
+                    selected
+                {%endif%}
+                >9 ano
+            </option>
+            <option 
+                value="1col"
+                {% if student.degree == '1col'%} 
+                    selected
+                {%endif%}
+                >1 colegial
+            </option>
+            <option 
+                value="2col"
+                {% if student.degree == '2col'%} 
+                    selected
+                {%endif%}
+                >2 colegial
+            </option>
+            <option 
+                value="3col"
+                {% if student.degree == '3col'%} 
+                    selected
+                {%endif%}
+                >3 colegial
             </option>
         </select>
     </div>
 </div>
 
 <div class="item">
-    <div>Tipo de Aula</div>
-    <div>
-        <span>
-            <input 
-                type="radio" 
-                name="type" 
-                value="P"
-                {% if student.type == 'P'%} 
-                    checked
-                {%endif%}
-            >Presencial
-        </span>
-        <span>
-            <input 
-                type="radio" 
-                name="type" 
-                value="D"
-                {% if student.type == 'D'%} 
-                    checked
-                {%endif%}
-            >À Distância
-        </span>
-    </div>
-</div>
-
-<div class="item">
-    <div>Area de Atuação</div>
+    <div>Carga Horaria Semanal</div>
     <div>
         <input 
-            type="text" 
-            name="subjects"
-            placeholder="Separe as matérias lecionadas por virgula"
-            value="{{ student.subjects}}"
+            type="number" 
+            name="workload"
+            placeholder="Quantidade de horas de aulas"
+            value="{{student.workload}}"  
         >
     </div>
 </div>
